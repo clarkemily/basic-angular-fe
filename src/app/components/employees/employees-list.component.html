@@ -1,6 +1,6 @@
 <ul>
   <li *ngFor="let employee of employees$ | async">
-    <app-employee></app-employee>
+    <app-employee [employee]=employee></app-employee>
   </li>
 </ul>
 <h2>Add Employees</h2>
