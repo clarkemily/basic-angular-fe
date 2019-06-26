@@ -25,4 +25,16 @@ export class EmployeeService {
     console.log(endpoint);
     return this.http.post<Employee>(endpoint, employee);
     }
+
+    updateEmployee(employee: Employee): Observable<Employee> {
+        const endpoint = environment.apiUrl + 'employees/' + employee.id;
+        console.log(endpoint)
+        return this.http.put<Employee>(endpoint, employee);
+    }
+
+    deleteEmployee(employee: Employee): Observable<Employee> {
+        const endpoint = environment.apiUrl + 'employees/' + employee.id;
+        console.log(endpoint)
+        return this.http.delete<Employee>(endpoint);
+    }
 }

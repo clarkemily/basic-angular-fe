@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Employee Database Front-End';
+  title = 'Super Wholesome Safe Daycare';
 }

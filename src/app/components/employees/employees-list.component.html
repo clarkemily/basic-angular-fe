@@ -19,3 +19,33 @@
   </span>
   <button type="submit">Add</button>
 </form>
+
+<h2>Update Employee</h2>
+<form class="update-form" #updateEmployeeForm="ngForm" (ngSubmit)="updateEmployee(updateEmployeeForm.form);">
+    <span>
+        <label for="id">Employee #:</label>
+        <input type="text" id="id" name="id" ngModel #title="ngModel" required>
+      </span>
+  <span>
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" ngModel #title="ngModel" required>
+  </span>
+  <span>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" ngModel #title="ngModel" required>
+  </span>
+  <span>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" ngModel #title="ngModel" required>
+  </span>
+  <button type="submit">Update</button>
+</form>
+
+<h2>Delete Employee</h2>
+<form class="delete-form" #deleteEmployeeForm="ngForm" (ngSubmit)="deleteEmployee(deleteEmployeeForm.form);">
+    <span>
+        <label for="id">Employee #:</label>
+        <input type="text" id="id" name="id" ngModel #title="ngModel" required>
+      </span>
+  <button type="submit">Delete</button>
+</form>

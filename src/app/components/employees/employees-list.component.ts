@@ -18,8 +18,36 @@ export class EmployeeListComponent implements OnInit {
     }
   
     addEmployee(form) {
-      const employee:Employee = new Employee(form.value.firstName, form.value.lastName, form.value.email);
+      const employee:Employee = new Employee(0, form.value.firstName, form.value.lastName, form.value.email);
       this.employeeService.addEmployee(employee)
+      .subscribe(
+        employee => console.log('Next value: ', employee),
+        err => console.error('Error: ', err),
+        () => {
+          console.log('Got a complete notification')
+          this.refreshEmployees();
+        }
+      );
+      form.reset();
+    }
+
+    updateEmployee(form) {
+      const employee:Employee = new Employee(form.value.id, form.value.firstName, form.value.lastName, form.value.email);
+      this.employeeService.updateEmployee(employee)
+      .subscribe(
+        employee => console.log('Next value: ', employee),
+        err => console.error('Error: ', err),
+        () => {
+          console.log('Got a complete notification')
+          this.refreshEmployees();
+        }
+      );
+      form.reset();
+    }
+
+    deleteEmployee(form) {
+      const employee:Employee = new Employee(form.value.id, form.value.firstName, form.value.lastName, form.value.email);
+      this.employeeService.deleteEmployee(employee)
       .subscribe(
         employee => console.log('Next value: ', employee),
         err => console.error('Error: ', err),
