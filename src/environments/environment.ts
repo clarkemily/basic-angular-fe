@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  //apiUrl: 'http://dbtest-be-appservice.azurewebsites.net/api/'
-  apiUrl: 'http://localhost:8080/api/'
+  apiUrl: 'http://dbtest-be-appservice.azurewebsites.net/api/'
+  //apiUrl: 'http://localhost:8080/api/'
 };
 
 /*
